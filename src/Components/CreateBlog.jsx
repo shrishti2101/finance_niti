@@ -7,7 +7,9 @@ const CreateBlog = () => {
    const  handleSubmit = (event) =>{
     event.preventDefault();
     console.log('Blog object:', blogs);
-    const blog={title,content};
+    const date= new Date().toLocaleDateString() ;
+    const time =new Date().toLocaleTimeString();
+    const blog={title,content,date,time};
     postBlog(blog);
       setTitle("");
         setContent("");
