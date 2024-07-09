@@ -64,8 +64,8 @@ const useFetch = (url) => {
 
      
   }
-  const editBlog = (id, updatedBlog) => {
-    fetch(`${url}/${id}`, {
+  const editBlog = (id,updatedBlog) => {
+    fetch(`${url}`, {
       method: "PATCH",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updatedBlog)
@@ -75,7 +75,14 @@ const useFetch = (url) => {
         return res.json();
       })
       .then((updatedData) => {
-        setData((prevData) => prevData.map((blog) => blog.id === id ? updatedData : blog));
+        setData((prevData) => {
+          if (Array.isArray(prevData)) {
+            return prevData.map((blog) => (blog.id === id ? updatedData : blog));
+          } else {
+            return updatedData;
+          }
+        });
+        // setData((prevData) => prevData.map((blog) => blog.id === id ? updatedBlog : blog));
       })
       .catch((error) => {
         setError(error.message);
