@@ -2,7 +2,7 @@
   import React, { useState } from 'react';
   import Modal from 'react-modal';
   import { FaEdit } from "react-icons/fa";
-  import { useParams } from 'react-router-dom';
+  // import { useParams } from 'react-router-dom';
   // import useFetch from '../useFetch';
   const EditBlog = ({blog,updateBlog}) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +24,7 @@
 
     return (
       <div>
-        <button onClick={handleOpenModal} className='flex items-center gap-1'><FaEdit/>Edit Blog</button>
+        <button onClick={handleOpenModal} className='flex items-center gap-1 hover:bg-green-700'><FaEdit/>Edit Blog</button>
         <Modal isOpen={isOpen} onRequestClose={handleCloseModal}
         style={{
           overlay: {
@@ -61,7 +61,7 @@
               <textarea value={content} onChange={(e) => setContent(e.target.value)} rows={6} color={20} className='w-[100%] border-2 p-3 mb-5'/>
             </label>
             <br />
-            <button type="button" onClick={handleUpdateBlog} className='bg-[#395651] p-[8px] px-[10px]'>Update Blog</button>
+            <button type="button" onClick={handleUpdateBlog} className='bg-[#395651] p-[8px] px-[10px] hover:bg-green-700'>Update Blog</button>
           </form>
         </Modal>
       </div>

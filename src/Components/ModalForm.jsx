@@ -17,7 +17,7 @@ const ModalForm = () => {
       }
   return (
     <div>
-        <button onClick={openModal} className='py-[8px]'>Add Blog</button>
+        <button onClick={openModal} className='py-[8px] hover:bg-green-700 border-0 outline-0'>Add Blog</button>
         <Modal
         isOpen={open}
         // onAfterOpen={afterOpenModal}

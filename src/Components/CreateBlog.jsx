@@ -31,7 +31,7 @@ const CreateBlog = () => {
                   </label> */}
                   <textarea placeholder="Content" value={content} onChange={(event) => setContent(event.target.value)} rows={6} color={20} className='w-[100%] border-2 p-3 mb-5'/>
                   <br />
-                  <button type="submit" className='p-[8px] px-[10px]'>Create Blog</button>
+                  <button type="submit" className='p-[8px] px-[10px] hover:bg-green-700'>Create Blog</button>
                 </form>
  
                 </>

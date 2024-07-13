@@ -19,7 +19,7 @@ const BlogList = ({ blogs }) => {
             <p className='overflow-hidden text-ellipsis h-[100px] whitespace-break-space'>
               {blog.content}
             </p>
-            <Link to={`blog/${blog.id}`} className=' bg-[#395651] text-white p-[8px] px-[10px] rounded-[10px]'>Read More</Link>
+            <Link to={`blog/${blog.id}`} className=' bg-[#395651] text-white p-[8px] px-[10px] rounded-[10px] hover:bg-green-700'>Read More</Link>
           </div>
         ))}
       </div>
